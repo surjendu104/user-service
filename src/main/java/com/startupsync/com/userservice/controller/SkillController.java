@@ -37,7 +37,6 @@ public class SkillController {
 		List<Skill> resp = skillService.findAllSkills();
 		return new ResponseEntity<List<Skill>>(resp, HttpStatus.OK);
 	}
-
 	@PutMapping("/update")
 	public ResponseEntity<Skill> updateSkill(@RequestBody Skill skill) {
 		Skill resp = skillService.updateSkill(skill);
