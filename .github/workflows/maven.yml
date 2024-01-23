@@ -28,6 +28,9 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build with Maven
+      env:
+        DATABASE_USERNAME: ${{secrets.DATABASE_USERNAME}}
+        DATABASE_PASSWORD: ${{secrets.DATABASE_PASSWORD}}
       run: mvn clean install
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
